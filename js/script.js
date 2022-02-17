@@ -170,6 +170,7 @@ $("#emailForm").submit(function (e) {
   })
     .then((res) => res.json())
     .then((res) => {
+      console.log(res);
       // in case the email was not send
       if (res.status !== 200)
         return $(".send-email-btn").text("Please try again!");
