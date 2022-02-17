@@ -141,3 +141,42 @@ $(document).ready(function () {
     },
   });
 });
+
+// send email
+$("#emailForm").submit(function (e) {
+  e.preventDefault();
+
+  // loader for screen
+  $(".send-email-btn").html("Sending...");
+
+  // get user data to send
+  const senderName = this[0].value;
+  const senderEmail = this[1].value;
+  const senderSubject = this[2].value;
+  const senderMessage = this[3].value;
+
+  const data = {
+    name: senderName,
+    email: senderEmail,
+    subject: senderSubject,
+    message: senderMessage,
+  };
+
+  // send email
+  fetch("/.netlify/functions/send-emails", {
+    method: "POST",
+    mode: "cors",
+    body: JSON.stringify(data),
+  }).then((res) => {
+    // in case the email was not send
+    if (res.status !== 200 || res.statusText !== "OK")
+      return $(".send-email-btn").text("Please try again!");
+
+    // clear the form
+    $(this[0]).val("");
+    $(this[1]).val("");
+    $(this[2]).val("");
+    $(this[3]).val("");
+    $(".send-email-btn").text("Send To Me");
+  });
+});
