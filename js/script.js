@@ -167,16 +167,18 @@ $("#emailForm").submit(function (e) {
     method: "POST",
     mode: "cors",
     body: JSON.stringify(data),
-  }).then((res) => {
-    // in case the email was not send
-    if (res.status !== 200 || res.statusText !== "OK")
-      return $(".send-email-btn").text("Please try again!");
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      // in case the email was not send
+      if (res.status !== 200)
+        return $(".send-email-btn").text("Please try again!");
 
-    // clear the form
-    $(this[0]).val("");
-    $(this[1]).val("");
-    $(this[2]).val("");
-    $(this[3]).val("");
-    $(".send-email-btn").text("Send To Me");
-  });
+      // clear the form
+      $(this[0]).val("");
+      $(this[1]).val("");
+      $(this[2]).val("");
+      $(this[3]).val("");
+      $(".send-email-btn").text("Send To Me");
+    });
 });
