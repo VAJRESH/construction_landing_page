@@ -2,42 +2,42 @@ const customers = [
   {
     id: 1,
     name: "Rosa Developers",
-    img: "../images/rosa-developers.png",
+    img: "../images/rosa.jpg",
   },
   {
     id: 2,
     name: "Pyramid Developers",
-    img: "../images/pyramid-developers.png",
+    img: "../images/pyramid.jfif",
   },
   {
     id: 3,
     name: "Aurum IT Park",
-    img: "../images/aurum-it-ark.png",
+    img: "../images/aurum.png",
   },
   {
     id: 4,
-    name: "Paraduse Developers",
-    img: "../images/paraduse-developers.png",
+    name: "Paradise Developers",
+    img: "../images/paradise.jfif",
   },
   {
     id: 5,
     name: "Metro Developers",
-    img: "../images/metro-developers.png",
+    img: "../images/metro.jfif",
   },
   {
     id: 6,
     name: "GAMI Developers",
-    img: "../images/gami-developers.png",
+    img: "../images/gami.jpg",
   },
   {
     id: 7,
     name: "Juhi Developers",
-    img: "../images/juhi-developers.png",
+    img: "../images/juhi.jfif",
   },
   {
     id: 8,
     name: "Nahar Builders",
-    img: "../images/nahar-builders.png",
+    img: "../images/nahar.png",
   },
 ];
 $(document).ready(function () {

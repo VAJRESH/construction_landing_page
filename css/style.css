@@ -1,5 +1,5 @@
 /*  import google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap"); */
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
@@ -233,7 +233,7 @@ section .title::after {
   width: 100%;
   opacity: 0.7;
   z-index: -1;
-  background: url("../images/home-bg-img.jpg") no-repeat center;
+  background: url("../images/home-bg-img.webp") no-repeat center;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -261,14 +261,6 @@ section .title::after {
   font-weight: 600;
   margin-left: -3px;
 }
-.home .home-content .text-3 {
-  font-size: 40px;
-  margin: 5px 0;
-}
-.home .home-content .text-3 span {
-  color: rgb(8, 8, 8);
-  font-weight: 500;
-}
 .home .home-content a {
   display: inline-block;
   background: var(--btn-bg-color);
@@ -276,14 +268,13 @@ section .title::after {
   font-size: 25px;
   padding: 12px 36px;
   margin-top: 20px;
-  font-weight: 400;
+  font-weight: bolder;
   border-radius: 6px;
   border: 2px solid var(--btn-bg-color);
   transition: all 0.3s ease;
 }
 .home .home-content a:hover {
   color: rgb(0, 0, 0);
-  font-weight: bolder;
   background: none;
 }
 /* about section styling */
@@ -347,7 +338,7 @@ section .title::after {
 }
 .services .serv-content .card {
   width: calc(33% - 20px);
-  max-height: 310px;
+  height: 400px;
   background: #222;
   text-align: center;
   border-radius: 6px;
@@ -355,6 +346,10 @@ section .title::after {
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 10px auto;
+}
+.services .card img {
+  height: 200px;
+  object-fit: cover;
 }
 .services .serv-content .card:hover {
   background: rgb(90, 90, 90);
@@ -502,20 +497,29 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
-.customer-carousel{
+.customer-carousel {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  overflow-x: hidden;
 }
-.customer-carousel > div{
+.customer-carousel > div {
   min-width: 120px;
 }
-.img-container {
-  max-width: 100px;
+.customer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.img-container img{
+.img-container {
+  max-width: 120px;
+  min-height: 140px;
+  margin-bottom: 10px;
+}
+.img-container img {
+  margin: auto;
   width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 /* contact section styling */
@@ -677,9 +681,6 @@ footer span a:hover {
   .home .home-content .text-2 {
     font-size: 70px;
   }
-  .home .home-content .text-3 {
-    font-size: 35px;
-  }
   .home .home-content a {
     font-size: 23px;
     padding: 10px 30px;
@@ -716,9 +717,6 @@ footer span a:hover {
   .home .home-content .text-2 {
     font-size: 60px;
   }
-  .home .home-content .text-3 {
-    font-size: 32px;
-  }
   .home .home-content a {
     font-size: 20px;
   }
@@ -730,9 +728,6 @@ footer span a:hover {
 @media (max-width: 500px) {
   .home .home-content .text-2 {
     font-size: 50px;
-  }
-  .home .home-content .text-3 {
-    font-size: 27px;
   }
   .about .about-content .right .text,
   .skills .skills-content .left .text {

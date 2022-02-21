@@ -16,8 +16,8 @@ exports.handler = function (event, context, callback) {
 
   transporter.sendMail(
     {
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
+      from: process.env.SENDER_EMAIL,
+      to: process.env.RECIEVER_EMAIL,
       subject: `Mail From Website (${subject}) ${new Date().toLocaleString()}`,
       text: emailTemplate(name, email, message),
     },
