@@ -40,6 +40,7 @@ const customers = [
     img: "../images/nahar.png",
   },
 ];
+
 $(document).ready(function () {
   loadCustomers();
 
@@ -136,5 +137,16 @@ $("#emailForm").submit(function (e) {
     $(this[2]).val("");
     $(this[3]).val("");
     $(".send-email-btn").text("Send To Me");
+  });
+});
+
+// navbar collapse close after click
+// https://stackoverflow.com/questions/42401606/how-to-hide-collapsible-bootstrap-navbar-on-click
+const navLinks = document.querySelectorAll(".nav-item");
+const menuToggle = document.getElementById("navbarSupportedContent");
+const bsCollapse = new bootstrap.Collapse(menuToggle);
+navLinks.forEach((l) => {
+  l.addEventListener("click", () => {
+    bsCollapse.toggle();
   });
 });

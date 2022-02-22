@@ -53,6 +53,7 @@
 }
 html {
   scroll-behavior: smooth;
+  cursor: default;
 }
 
 /* custom scroll bar */
@@ -126,7 +127,7 @@ section .title::after {
   transform: translateX(-50%);
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 450px) {
   section .title::after {
     width: 200px;
   }
@@ -137,7 +138,7 @@ section .title::after {
   position: fixed;
   width: 100%;
   z-index: 999;
-  padding: 30px 0;
+  padding: 10px 0;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.3s ease;
 }
@@ -146,7 +147,7 @@ section .title::after {
   font-size: 1.2rem;
 }
 .navbar.sticky {
-  padding: 15px 0;
+  padding: 0px;
   background: crimson;
 }
 .navbar .max-width {
@@ -154,7 +155,25 @@ section .title::after {
   align-items: center;
   justify-content: space-between;
 }
+
+.brand-logo {
+  height: 70px;
+  width: 70px;
+  margin: auto 5px;
+}
+.brand-name {
+  display: none;
+}
+
 @media screen and (min-width: 600px) {
+  .brand-name {
+    display: inline-block;
+  }
+  .nav-link-container {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
   .navbar.sticky a {
     color: #fff;
   }
@@ -502,9 +521,13 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  max-width: 700px;
 }
 .customer-carousel > div {
   min-width: 120px;
+}
+.customer-carousel p {
+  color: #111;
 }
 .customer-card {
   display: flex;
